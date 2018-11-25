@@ -27,3 +27,9 @@ keycode 133 = Alt_L
 !print_screenをSuper_Lに入れ替え
 keycode 107 = Super_L
 add mod4 = Super_L
+
+!四則演算子を追加
+keycode 57 = n N plus plus 
+keycode 43 = h H asterisk asterisk
+keycode 58 = m M minus minus
+keycode 44 = j J slash slash

@@ -2,7 +2,11 @@
 
 ## 対応OS
 
-UBUNTU16.04/18.04
+ubuntu 18.04
+
+* ubuntu 16.04も出来なくは無いですが、`install.sh`の中の`golang`をそのまま入れると下記のサイトに書いてある問題が発生するため、先にgolangをインストールしてください。powerline-goを入れるためにgoは必須です。
+
+[今日からGoをはじめる人に伝えたい$GOPATHではまった話](https://www.slideshare.net/ohashiyuta/gogopath)
 
 ## install手順
 

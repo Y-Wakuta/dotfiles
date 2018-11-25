@@ -233,3 +233,6 @@ export PATH=/usr/lib/go-1.10/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/lib/go
 export PATH=$PATH:$HOME/.nodebrew/current/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$HOME/go/bin:/usr/local/go/bin
+
+export PATH=$PATH:$HOME/dex2jar-2.0
+export PATH=$PATH:$HOME/jd

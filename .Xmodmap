@@ -1,6 +1,8 @@
+!keyboardはは、国際101
+
 !backspaceとbackslashの入れかえ
 keycode 51 = BackSpace
-keycode 22 = backslash 
+keycode 22 = backslash bar bar bar
 !
 ! CapsLockとCtrlを入れ替える
 !
@@ -33,3 +35,12 @@ keycode 57 = n N plus plus
 keycode 43 = h H asterisk asterisk
 keycode 58 = m M minus minus
 keycode 44 = j J slash slash
+
+!PgUp, PgDn
+keycode 46 = l L Prior Prior
+keycode 60 = period greater Next Next
+
+!行頭、行末
+keycode 45 = k K Home Home
+keycode 59 = comma less End End
+

@@ -69,6 +69,7 @@ set noerrorbells "エラーメッセージの表示時にビープを鳴らさ�
 
 "自分でいじった分
 syntax enable
+
 "colorscheme molokai
 set clipboard+=unnamed
 

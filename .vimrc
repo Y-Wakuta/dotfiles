@@ -69,7 +69,70 @@ set noerrorbells "エラーメッセージの表示時にビープを鳴らさ�
 
 "自分でいじった分
 syntax enable
-colorscheme molokai
 
-" ESCでIMEをoffにする
-inoremap <ESC> <ESC>:set iminsert=0<CR>  " ESCでIMEを確実にOFF
+"colorscheme molokai
+set clipboard+=unnamed
+
+"dein Scripts-----------------------------
+
+let s:dein_dir = expand('~/.cache/dein')
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=/Users/yusuke/dotfiles/.cache/dein//repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state('/Users/yusuke/dotfiles/.cache/dein/')
+  call dein#begin('/Users/yusuke/dotfiles/.cache/dein/')
+
+  " Let dein manage dein
+  " Required:
+  call dein#add('/Users/yusuke/dotfiles/.cache/dein//repos/github.com/Shougo/dein.vim')
+
+  " Add or remove your plugins here like this:
+  "call dein#add('Shougo/neosnippet.vim')
+  "call dein#add('Shougo/neosnippet-snippets')
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+" 設定開始
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+  
+  call dein#add('morhetz/gruvbox')
+  call dein#add('lervag/vimtex')
+  
+   " 設定終了
+  call dein#end()
+  call dein#save_state()
+endif
+
+
+
+syntax enable
+
+" === gruvbox ===
+colorscheme gruvbox
+
+set background=dark
+set t_Co=256            " gruvboxをカラースキーマにするときに必要！
+let g:ligthline = { 'colorscheme': 'gruvbox' }
+" === gruvbox ===
+"
+" === vimtex ===
+let g:vimtex_compiler_latexmk_engines = { '_' : '-pdfdvi' }
+" === vimtex ===

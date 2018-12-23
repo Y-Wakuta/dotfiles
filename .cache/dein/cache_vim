@@ -1,0 +1,3 @@
+['/Users/yusuke/.vimrc']
+{"gruvbox":{"lazy":0,"path":"/Users/yusuke/.cache/dein/repos/github.com/morhetz/gruvbox","repo":"morhetz/gruvbox","merged":1,"normalized_name":"gruvbox","type":"git","rtp":"/Users/yusuke/.cache/dein/repos/github.com/morhetz/gruvbox","sourced":1,"name":"gruvbox"},"vimtex":{"lazy":0,"path":"/Users/yusuke/.cache/dein/repos/github.com/lervag/vimtex","repo":"lervag/vimtex","merged":1,"normalized_name":"vimtex","type":"git","rtp":"/Users/yusuke/.cache/dein/repos/github.com/lervag/vimtex","sourced":1,"name":"vimtex"}}
+{}

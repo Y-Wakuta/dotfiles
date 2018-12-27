@@ -155,7 +155,7 @@ elif which putclip >/dev/null 2>&1 ; then
     alias -g C='| putclip'
 fi
 
-
+#alias latexmk='latexmk -pvc'
 
 ########################################
 # OS 別の設定
@@ -172,7 +172,9 @@ case ${OSTYPE} in
 esac
 
 # vim:set ft=zsh:
-
+[[ -d ~/.rbenv  ]] && \
+export PATH=${HOME}/.rbenv/bin:${PATH} && \
+eval "$(rbenv init -)"
 #=================================================
 #powerline-go
 #=================================================
@@ -180,13 +182,6 @@ esac
 export PATH=${HOME}/.rbenv/bin:${PATH} && \
 eval "$(rbenv init -)"
 
-
-    export PATH=/usr/lib/go-1.10/bin:$PATH
-
-    function powerline_precmd() {
-        PS1="$(~/go/bin/powerline-go -error $? -newline -shell zsh)"
-    }
-    
 function install_powerline_precmd() {
   for s in "${precmd_functions[@]}"; do
      if [ "$s" = "powerline_precmd" ]; then
@@ -199,7 +194,13 @@ function install_powerline_precmd() {
 if [ "$TERM" != "linux" ]; then
         install_powerline_precmd
 fi
-#add-zsh-hook precmd powerline_precmd
+export PATH=/usr/lib/go-1.10/bin:$PATH
+
+function powerline_precmd() {
+  PS1="$(~/go/bin/powerline-go -error $? -newline -shell zsh)"
+}
+
+add-zsh-hook precmd powerline_precmd
 #=================================================
 
 

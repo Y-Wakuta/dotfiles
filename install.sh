@@ -52,6 +52,7 @@ sudo mkdir -p ~/go
 cd $(dirname $0)
 ./link.sh
 source ~/.zshrc
+tmux source ~/.tmux.conf
 sudo go get -u github.com/justjanne/powerline-go
 #============================================================
 chsh -s `which zsh` $USER #default shellをzshに変更

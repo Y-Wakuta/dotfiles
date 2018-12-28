@@ -12,7 +12,7 @@ autoload -Uz colors
 colors
 
 # vim 風キーバインドにする
-bindkey -v
+#bindkey -v
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
@@ -152,7 +152,6 @@ elif which putclip >/dev/null 2>&1 ; then
 fi
 
 
-
 ########################################
 # OS 別の設定
 case ${OSTYPE} in
@@ -208,7 +207,12 @@ esac
 
 #上のものの方が高機能っぽいが、上手く動かなかった
 #https://saitodev.co/article/zsh%E3%81%AE%E8%B5%B7%E5%8B%95%E3%81%A8%E5%90%8C%E6%99%82%E3%81%ABtmux%E3%82%82%E8%B5%B7%E5%8B%95%E3%81%97%E3%81%A6%E3%81%BB%E3%81%97%E3%81%84
-[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+#[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 #=================================================export GOPATH=/home/yusuke/go
 export PATH=/usr/lib/go-1.10/bin:/home/yusuke/.rbenv/shims:/home/yusuke/.rbenv/bin:/usr/lib/go-1.10/bin:/home/yusuke/.rbenv/shims:/home/yusuke/.rbenv/bin:/usr/lib/go-1.10/bin:/home/yusuke/.rbenv/shims:/home/yusuke/.rbenv/bin:/usr/lib/go-1.10/bin:/home/yusuke/.rbenv/shims:/home/yusuke/.rbenv/bin:/usr/lib/go-1.10/bin:/home/yusuke/.rbenv/shims:/home/yusuke/.rbenv/bin:/opt/apache-drill-1.12.0/bin:/usr/lib/hbase-1.3.1/bin:/opt/zookeeper-3.4.10/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/yusuke/go/bin:/usr/local/go/bin
 export PATH=$PATH:/Users/yusuke/.nodebrew/current/bin
+source /usr/local/bin/virtualenvwrapper.sh
+export WORKON_HOME=~/.virtualenvs
+export PATH=${HOME}/.rbenv/shims:${PATH} 
+eval "$(rbenv init -)"
+export PATH=/usr/local/texlive/2018/bin/x86_x64-darwin:/Users/yusuke/.rbenv/shims:/Users/yusuke/.rbenv/shims:/usr/lib/go-1.10/bin:/home/yusuke/.rbenv/shims:/home/yusuke/.rbenv/bin:/usr/lib/go-1.10/bin:/home/yusuke/.rbenv/shims:/home/yusuke/.rbenv/bin:/usr/lib/go-1.10/bin:/home/yusuke/.rbenv/shims:/home/yusuke/.rbenv/bin:/usr/lib/go-1.10/bin:/home/yusuke/.rbenv/shims:/home/yusuke/.rbenv/bin:/usr/lib/go-1.10/bin:/home/yusuke/.rbenv/shims:/home/yusuke/.rbenv/bin:/opt/apache-drill-1.12.0/bin:/usr/lib/hbase-1.3.1/bin:/opt/zookeeper-3.4.10/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/yusuke/go/bin:/usr/local/go/bin:/Users/yusuke/.nodebrew/current/bin

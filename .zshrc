@@ -12,7 +12,7 @@ autoload -Uz colors
 colors
 
 # vim 風キーバインドにする
-bindkey -v
+#bindkey -v
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
@@ -138,10 +138,6 @@ alias sudo='sudo '
 alias -g L='| less'
 alias -g G='| grep'
 
-# clipboardを使用できるようにする.macのpbcopyとの衝突を避けるため頭にuをつける
-alias upbcopy='xsel --clipboard --input'
-alias upbpaste='xsel --clipboard --output'
-
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
 if which pbcopy >/dev/null 2>&1 ; then
@@ -155,7 +151,6 @@ elif which putclip >/dev/null 2>&1 ; then
     alias -g C='| putclip'
 fi
 
-#alias latexmk='latexmk -pvc'
 
 ########################################
 # OS 別の設定
@@ -172,35 +167,19 @@ case ${OSTYPE} in
 esac
 
 # vim:set ft=zsh:
-[[ -d ~/.rbenv  ]] && \
-export PATH=${HOME}/.rbenv/bin:${PATH} && \
-eval "$(rbenv init -)"
+
 #=================================================
 #powerline-go
 #=================================================
 
-export PATH=${HOME}/.rbenv/bin:${PATH} && \
-eval "$(rbenv init -)"
 
-function install_powerline_precmd() {
-  for s in "${precmd_functions[@]}"; do
-     if [ "$s" = "powerline_precmd" ]; then
-       return
-     fi
-  done
-  precmd_functions+=(powerline_precmd)
-}
+    export PATH=/usr/lib/go-1.10/bin:$PATH
 
-if [ "$TERM" != "linux" ]; then
-        install_powerline_precmd
-fi
-export PATH=/usr/lib/go-1.10/bin:$PATH
+    function powerline_precmd() {
+        PS1="$(~/go/bin/powerline-go -error $? -newline -shell zsh)"
+    }
 
-function powerline_precmd() {
-  PS1="$(~/go/bin/powerline-go -error $? -newline -shell zsh)"
-}
-
-add-zsh-hook precmd powerline_precmd
+#add-zsh-hook precmd powerline_precmd
 #=================================================
 
 
@@ -228,13 +207,12 @@ add-zsh-hook precmd powerline_precmd
 
 #上のものの方が高機能っぽいが、上手く動かなかった
 #https://saitodev.co/article/zsh%E3%81%AE%E8%B5%B7%E5%8B%95%E3%81%A8%E5%90%8C%E6%99%82%E3%81%ABtmux%E3%82%82%E8%B5%B7%E5%8B%95%E3%81%97%E3%81%A6%E3%81%BB%E3%81%97%E3%81%84
-[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
-#=================================================export GOPATH=$HOME/go
-
-export PATH=/usr/lib/go-1.10/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/lib/go-1.10/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/lib/go-1.10/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/lib/go-1.10/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/lib/go-1.10/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/opt/apache-drill-1.12.0/bin:/usr/lib/hbase-1.3.1/bin:/opt/zookeeper-3.4.10/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:$HOME/go/bin:/usr/local/go/bin:$HOME/ghkw_linux_amd64
-export PATH=$PATH:$HOME/.nodebrew/current/bin
-export GOPATH=$HOME/go
-export PATH=$PATH:$HOME/go/bin:/usr/local/go/bin
-
-export PATH=$PATH:$HOME/dex2jar-2.0
-export PATH=$PATH:$HOME/jd
+#[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+#=================================================export GOPATH=/home/yusuke/go
+export PATH=/usr/lib/go-1.10/bin:/home/yusuke/.rbenv/shims:/home/yusuke/.rbenv/bin:/usr/lib/go-1.10/bin:/home/yusuke/.rbenv/shims:/home/yusuke/.rbenv/bin:/usr/lib/go-1.10/bin:/home/yusuke/.rbenv/shims:/home/yusuke/.rbenv/bin:/usr/lib/go-1.10/bin:/home/yusuke/.rbenv/shims:/home/yusuke/.rbenv/bin:/usr/lib/go-1.10/bin:/home/yusuke/.rbenv/shims:/home/yusuke/.rbenv/bin:/opt/apache-drill-1.12.0/bin:/usr/lib/hbase-1.3.1/bin:/opt/zookeeper-3.4.10/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/yusuke/go/bin:/usr/local/go/bin
+export PATH=$PATH:/Users/yusuke/.nodebrew/current/bin
+source /usr/local/bin/virtualenvwrapper.sh
+export WORKON_HOME=~/.virtualenvs
+export PATH=${HOME}/.rbenv/shims:${PATH} 
+eval "$(rbenv init -)"
+export PATH=/usr/local/texlive/2018/bin/x86_x64-darwin:/Users/yusuke/.rbenv/shims:/Users/yusuke/.rbenv/shims:/usr/lib/go-1.10/bin:/home/yusuke/.rbenv/shims:/home/yusuke/.rbenv/bin:/usr/lib/go-1.10/bin:/home/yusuke/.rbenv/shims:/home/yusuke/.rbenv/bin:/usr/lib/go-1.10/bin:/home/yusuke/.rbenv/shims:/home/yusuke/.rbenv/bin:/usr/lib/go-1.10/bin:/home/yusuke/.rbenv/shims:/home/yusuke/.rbenv/bin:/usr/lib/go-1.10/bin:/home/yusuke/.rbenv/shims:/home/yusuke/.rbenv/bin:/opt/apache-drill-1.12.0/bin:/usr/lib/hbase-1.3.1/bin:/opt/zookeeper-3.4.10/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/yusuke/go/bin:/usr/local/go/bin:/Users/yusuke/.nodebrew/current/bin

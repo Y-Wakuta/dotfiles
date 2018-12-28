@@ -81,15 +81,15 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/home/yusuke/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/home/yusuke/.cache/dein')
-  call dein#begin('/home/yusuke/.cache/dein')
+if dein#load_state('$HOME/.cache/dein')
+  call dein#begin('$HOME/.cache/dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/home/yusuke/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('$HOME/.cache/dein/repos/github.com/Shougo/dein.vim')
 
 -  call dein#add('morhetz/gruvbox')
 -  call dein#add('lervag/vimtex')
@@ -156,4 +156,9 @@ let g:ligthline = { 'colorscheme': 'gruvbox' }
 "
 " === vimtex ===
 let g:vimtex_compiler_latexmk_engines = { '_' : '-pdfdvi' }
+let g:vimtex_compiler_latexmk = {
+  \ 'background': 1,
+  \ 'build_dir': '',
+  \ 'continuous': 1,
+  \ 'options': [],}
 " === vimtex ===

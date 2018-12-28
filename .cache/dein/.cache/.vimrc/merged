@@ -1,2 +1,2 @@
 100
-['lervag/vimtex', 'morhetz/gruvbox']
+['/Users/yusuke/.cache/dein/repos/github.com/Shougo/dein.vim', 'Shougo/neomru.vim', 'Shougo/unite.vim', 'airblade/vim-gitgutter', 'godlygeek/tabular', 'lervag/vimtex', 'morhetz/gruvbox', 'plasticboy/vim-markdown', 'scrooloose/nerdtree', 'vim-airline/vim-airline']

@@ -1,8 +1,12 @@
 set nocompatible
 
 " 画面表示の設定
-
-set relativenumber         " 行番号を表示する
+"
+" ==行番号表示==
+set number relativenumber
+set nu rnu
+"set relativenumber         " 行番号を表示する
+" ==行番号表示==
 set cmdheight=2    " メッセージ表示欄を2行確保
 set showmatch      " 対応する括弧を強調表示
 set helpheight=999 " ヘルプを画面いっぱいに開く
@@ -100,6 +104,7 @@ if dein#load_state('/home/yusuke/.cache/dein')
 -  call dein#add('Shougo/unite.vim')
 -  call dein#add('Shougo/neomru.vim')
 -  call dein#add('scrooloose/nerdtree')
+-  call dein#add('tpope/vim-fugitive')
 
   " Add or remove your plugins here like this:
   "call dein#add('Shougo/neosnippet.vim')
@@ -157,3 +162,11 @@ let g:ligthline = { 'colorscheme': 'gruvbox' }
 " === vimtex ===
 let g:vimtex_compiler_latexmk_engines = { '_' : '-pdfdvi' }
 " === vimtex ===
+"
+" ==fugitive==
+" grep検索の実行後にQuickFix Listを表示する
+autocmd QuickFixCmdPost *grep* cwindow
+
+" ステータス行に現在のgitブランチを表示する
+set statusline+=%{fugitive#statusline()}
+" ==fugitive==

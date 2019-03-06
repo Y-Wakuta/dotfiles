@@ -94,11 +94,8 @@ if dein#load_state('$HOME/.cache/dein')
 -  call dein#add('morhetz/gruvbox')
 -  call dein#add('lervag/vimtex')
 -  call dein#add('airblade/vim-gitgutter')
--  call dein#add('godlygeek/tabular')
 -  call dein#add('plasticboy/vim-markdown')
 -  call dein#add('vim-airline/vim-airline')
--  call dein#add('Shougo/unite.vim')
--  call dein#add('Shougo/neomru.vim')
 -  call dein#add('scrooloose/nerdtree')
 
   " Add or remove your plugins here like this:
